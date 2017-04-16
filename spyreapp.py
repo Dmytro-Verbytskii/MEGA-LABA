@@ -2,7 +2,7 @@ from spyre import server
 import pandas as pd
 import os
 class MyApp(server.App):
-    title = "Daniel's APP"
+    title = "App"
     inputs = [
         {
             "type": "dropdown",
