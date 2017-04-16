@@ -1,9 +1,11 @@
 from spyre import server
 import pandas as pd
 import os
-class MyApp(server.App):
-    title = "App"
-    inputs = [
+
+
+class MyApp(server.App):  # клас, яки успадковую сервер.еп, який має декілька методів
+    title = "Dimasik's App"
+    inputs = [     # список словників, по одному для кожного вхідного елемента
         {
             "type": "dropdown",
             "id": "file",
@@ -41,11 +43,11 @@ class MyApp(server.App):
             "id": "type",
             "label": "Researchable index",
             "options": [
-                {"label": "VHI", "value": "VHI"},
-                {"label": "TCI", "value": "TCI"},
-                {"label": "VCI", "value": "VCI"},
-                {"label": "SMT", "value": "SMT"},
-                {"label": "SMN", "value": "SMN"},
+                {"label": "VHI", "value": "VHI"}, # вегетаційне здоров'я
+                {"label": "TCI", "value": "TCI"}, # температурний режим
+                {"label": "VCI", "value": "VCI"}, # ступінь пригніченості
+                {"label": "SMT", "value": "SMT"}, # згладжена різниця рослинності
+                {"label": "SMN", "value": "SMN"}, # згладжена яскравість температури
             ],
             "key": "type",
             "action_id": "update",
@@ -71,10 +73,7 @@ class MyApp(server.App):
             "id": "update",
         }
     ]
-    tabs = [
-        "Table",
-        "Plot",
-    ]
+    tabs = ["Table", "Plot", ]
 
     def getData(self, params):
         filename = params["file"]
