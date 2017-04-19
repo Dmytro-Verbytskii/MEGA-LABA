@@ -4,7 +4,7 @@ import os
 
 
 class MyApp(server.App):  # клас, яки успадковую сервер.еп, який має декілька методів
-    title = "Dimasik's App"
+    title = "DiApp"
     inputs = [     # список словників, по одному для кожного вхідного елемента
         {
             "type": "dropdown",
